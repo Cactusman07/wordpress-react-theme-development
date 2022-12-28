@@ -13,6 +13,8 @@ Docker will create a ‘wordpress/’ directory that alongside your docker-compo
 WordPress site will be located on localhost:8080
 phpMyAdmin will be located on localhost:8180
 
+This next step is necessary due to how Docker handles file permissions and how the wordpress Docker image is constructed. 
+
 Navigate to your project directory by doing the following: 
   docker exec -it <container_id> /bin/bash 
 
