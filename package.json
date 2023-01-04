@@ -1,0 +1,36 @@
+{
+  "name": "wordpress-portfolio-local",
+  "version": "1.0.0",
+  "description": "A tutorial for wordpress theme development, using Docker, React & more. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cactusman07/wordpress-react-theme-development.git"
+  },
+  "keywords": [
+    "wordpress",
+    "react",
+    "docker",
+    "theme",
+    "development"
+  ],
+  "author": "Cactusman07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cactusman07/wordpress-react-theme-development/issues"
+  },
+  "homepage": "https://github.com/Cactusman07/wordpress-react-theme-development#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
