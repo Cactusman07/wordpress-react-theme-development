@@ -6,6 +6,7 @@ services:
     container_name: wordpress
     volumes:
       - ./wordpress:/var/www/html
+      - ./wpTheme:/var/www/html/wp-content/themes/new-theme
     environment:
       - WORDPRESS_DB_NAME=wordpress
       - WORDPRESS_TABLE_PREFIX=wp_
