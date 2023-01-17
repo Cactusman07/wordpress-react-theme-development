@@ -1,12 +1,12 @@
 const path = require('path')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 
-
 module.exports = (env) => {
+  console.log(env);
 
   return{
-    mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: !!env.production ? 'hidden-source-map' : 'inline-source-map',
+    mode: !!env.production ? 'production' : 'development',
     entry: path.resolve(__dirname, './src/index.tsx'),
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.scss'],
@@ -77,7 +77,8 @@ module.exports = (env) => {
     ],
     output: {
       filename: 'main.js',
-      path: env.production ? path.resolve(__dirname, './dist') : path.resolve(__dirname, './wpTheme/dist')
+      path: !!env.production ? path.resolve(__dirname, './dist') : path.resolve(__dirname, './wpTheme/dist'),
+      clean: true
     }
   }
 }

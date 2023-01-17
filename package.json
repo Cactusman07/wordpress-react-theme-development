@@ -4,12 +4,12 @@
   "description": "A tutorial for wordpress theme development, using Docker, React, Webpack & more - built from scratch. ",
   "main": "./src/index.js",
   "scripts": {
-    "start": "docker-compose up -d && npm run dev",
+    "start": "docker-compose up -d && npm run dev && build-dev",
     "stop": "docker stop db wordpress phpmyadmin wordpress-cli",
     "remove": "docker rm db wordpress phpmyadmin wordpress-cli",
     "build-prod": "webpack --env production",
     "build-dev": "webpack --env development",
-    "dev": "start http://localhost:3000/ & webpack-dev-server",
+    "dev": "start http://localhost:3000/ & webpack-dev-server --hot",
     "test": "test"
   },
   "repository": {
