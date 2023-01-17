@@ -7,7 +7,8 @@
     "start": "docker-compose up -d && npm run dev",
     "stop": "docker stop db wordpress phpmyadmin wordpress-cli",
     "remove": "docker rm db wordpress phpmyadmin wordpress-cli",
-    "build": "webpack",
+    "build-prod": "webpack --env production",
+    "build-dev": "webpack --env development",
     "dev": "start http://localhost:3000/ & webpack-dev-server",
     "test": "test"
   },
@@ -22,6 +23,18 @@
     "theme",
     "development"
   ],
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "author": "Cactusman07",
   "license": "ISC",
   "bugs": {
@@ -33,6 +46,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@types/react": "^18.0.26",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "babel-loader": "^9.1.2",
     "browser-sync-webpack-plugin": "^2.3.0",
