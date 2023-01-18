@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
-export default function useFetch(url) {
+export default function useFetch(url: string) {
     const [data, setData] = useState(null);
+
     useEffect(() => {
-        async function loadData() {
+        async function loadPosts() {
             const response = await fetch(url);
             if(!response.ok) {
                 // Something failed
@@ -14,7 +15,7 @@ export default function useFetch(url) {
             setData(posts);
         }
 
-        loadData();
+        loadPosts();
     }, [url]);
     return data;
 }
