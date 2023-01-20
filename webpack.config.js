@@ -78,7 +78,7 @@ module.exports = (env) => {
     output: {
       filename: 'main.js',
       path: !!env.production ? path.resolve(__dirname, './dist') : path.resolve(__dirname, './wpTheme/dist'),
-      clean: true
+      clean: false
     }
   }
 }

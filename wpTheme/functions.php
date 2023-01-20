@@ -5,7 +5,7 @@
     $version = '1.1.0';
 
     wp_enqueue_script('theme-script', get_stylesheet_directory_uri() . '/dist/main.js', array('jquery'), $version, true );
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/dist/style.bundle.css', array(), $version);
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/dist/main.css', array(), $version);
 
     $config = array(
       // Add theme variables later that are needed in react
