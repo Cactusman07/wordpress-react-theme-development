@@ -13,6 +13,29 @@
 
     wp_localize_script('theme', 'wp_config', $config);
   }
+
+  add_action('admin_notices', 'showAdminMessages');
+
+function showAdminMessages() {
+	$plugin_messages = array();
+
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+	// WPGraphQL Plugin
+	if(!is_plugin_active( 'wp-graphql/wp-graphql.php' ))	{
+		$plugin_messages[] = 'This theme requires you to install the WPGraphQL plugin, <a href="https://www.wpgraphql.com/" target="_blank">download it from here</a>.';
+	}
+
+	if(count($plugin_messages) > 0)	{
+		echo '<div id="message" class="error">';
+
+			foreach($plugin_messages as $message) {
+				echo '<p><strong>'.$message.'</strong></p>';
+			}
+
+		echo '</div>';
+	}
+}
   
   add_action('wp_enqueue_scripts', 'theme_enqueue_scripts');
 
@@ -57,6 +80,9 @@
         'publicly_queryable'  => true,
         'capability_type'     => 'page',
         'menu_icon'           => 'dashicons-star-filled',
+        'show_in_graphql'     => true,
+        'graphql_single_name' => 'attribute',
+        'graphql_plural_name' => 'attributes',
       );
       register_post_type('Attributes', $args );
     }
