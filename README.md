@@ -1,5 +1,6 @@
 # wordpress-react-theme-development
-Wordpress, React, Docker theme development (from scratch) setup.
+Wordpress, React, Docker theme development (from scratch) setup. 
+Full step-by-step tutorial is here: https://sammuir.co.nz/blog/wordpress-react-tutorial/
 
 Prerequisites: Docker Desktop, Docker Compose (should have been included with Docker on Windows and macOS) & VSCode installed.
 
